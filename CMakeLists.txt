@@ -40,6 +40,6 @@ install(TARGETS
 install(EXPORT
         cnpyConfig
 #        DESTINATION "${CMAKE_INSTALL_DATADIR}/cnpy/cmake"
-        DESTINATION "lib/cmake"
+        DESTINATION "lib/cmake/cnpy"
         NAMESPACE cnpy::
         )
