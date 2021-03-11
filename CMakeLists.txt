@@ -28,3 +28,18 @@ install(FILES "mat2npz" "npy2mat" "npz2mat" DESTINATION bin PERMISSIONS OWNER_RE
 
 add_executable(example1 example1.cpp)
 target_link_libraries(example1 cnpy)
+
+install(TARGETS
+        cnpy
+        EXPORT cnpyConfig
+        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+        )
+
+install(EXPORT
+        cnpyConfig
+#        DESTINATION "${CMAKE_INSTALL_DATADIR}/cnpy/cmake"
+        DESTINATION "lib/cmake"
+        NAMESPACE cnpy::
+        )
